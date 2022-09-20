@@ -14,7 +14,7 @@ public class SecondActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-        Toast.makeText(this, "Creating Second screen", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Creating the Second screen", Toast.LENGTH_SHORT).show();
         btn_third =  findViewById(R.id.btn_second_third);
         btn_first =  findViewById(R.id.btn_second_first);
     }
