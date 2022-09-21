@@ -15,6 +15,11 @@
         android:id="@+id/txt_firstScreen"
 
        />
+    <EditText
+        android:id="@+id/txt_main_name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Your Name"/>
      <LinearLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content">

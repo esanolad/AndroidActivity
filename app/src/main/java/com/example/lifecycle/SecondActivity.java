@@ -4,17 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
     Button btn_third, btn_first;
+    TextView lbl;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-        Toast.makeText(this, "Creating the Second screen", Toast.LENGTH_SHORT).show();
+
+
+        lbl= findViewById(R.id.txt_welcome);
+
+        Toast.makeText(this, "welcome", Toast.LENGTH_SHORT).show();
         btn_third =  findViewById(R.id.btn_second_third);
         btn_first =  findViewById(R.id.btn_second_first);
     }
@@ -23,6 +29,9 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Bundle b = getIntent().getExtras();
+        String old = lbl.getText().toString();
+        lbl.setText(old + " " + b.getString("userName"));
         Toast.makeText(this, "Resuming Second Screen", Toast.LENGTH_SHORT).show();
         btn_third.setOnClickListener(new View.OnClickListener() {
             @Override

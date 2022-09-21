@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 public TextView tv_title;
+public EditText txt_name;
 public Button btn_second, btn_third;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public Button btn_second, btn_third;
         tv_title = findViewById(R.id.txt_welcome);
         btn_second= findViewById(R.id.btn_main_second);
         btn_third= findViewById(R.id.btn_main_third);
+        txt_name= findViewById(R.id.txt_main_name);
     }
 
     @Override
@@ -37,7 +40,10 @@ public Button btn_second, btn_third;
             @Override
             public void onClick(View view) {
                 //tv_title.setText("Welcome");
+                Bundle b = new Bundle();
+                b.putString("userName", txt_name.getText().toString());
                 Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                i.putExtras(b);
                 startActivity(i);
             }
         });
